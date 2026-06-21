@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\ProjectiWazia\\4\u00BA ANO UNIKIVI\\2\u00BA Semestre\\Linguagem de Programa\u00E7\u00E3o VIII\\e-commerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61EB0C26-7856-FFE4-D9A9-746B9AE31137}|e-commerce\\e-commerce.csproj|c:\\users\\pc\\documents\\projectiwazia\\4\u00BA ano unikivi\\2\u00BA semestre\\linguagem de programa\u00E7\u00E3o viii\\e-commerce\\e-commerce\\repositories(dal)\\carrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61EB0C26-7856-FFE4-D9A9-746B9AE31137}|e-commerce\\e-commerce.csproj|solutionrelative:e-commerce\\repositories(dal)\\carrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarrinhoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\ProjectiWazia\\4\u00BA ANO UNIKIVI\\2\u00BA Semestre\\Linguagem de Programa\u00E7\u00E3o VIII\\e-commerce\\e-commerce\\Repositories(DAL)\\CarrinhoRepository.cs",
+              "RelativeDocumentMoniker": "e-commerce\\Repositories(DAL)\\CarrinhoRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\ProjectiWazia\\4\u00BA ANO UNIKIVI\\2\u00BA Semestre\\Linguagem de Programa\u00E7\u00E3o VIII\\e-commerce\\e-commerce\\Repositories(DAL)\\CarrinhoRepository.cs",
+              "RelativeToolTip": "e-commerce\\Repositories(DAL)\\CarrinhoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-20T15:18:27.733Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

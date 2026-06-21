@@ -1,0 +1,96 @@
+﻿using e_commerce.Modelos;
+using e_commerce.Repositorios;
+using e_commerce.Repositorios__DAL_;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace e_commerce.Formularios
+{
+    public partial class frmCarrinho : Form
+    {
+        public frmCarrinho()
+        {
+            InitializeComponent();
+        }
+
+        private void CarregarCombo()
+        {
+            ProdutoRepository repo = new ProdutoRepository();
+            cbProdutos.DataSource = repo.Listar();
+            cbProdutos.DisplayMember = "Nome";
+            cbProdutos.ValueMember = "Id";
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            int clienteId = 1; // exemplo
+
+            CarrinhoRepository carrinhoRepo = new CarrinhoRepository();
+            int carrinhoId = carrinhoRepo.ObterCarrinhoPorCliente(clienteId);
+
+            // validação para evitar NullReferenceException ao converter SelectedValue
+            if (cbProdutos.SelectedValue == null || cbProdutos.SelectedValue == DBNull.Value)
+            {
+                MessageBox.Show("Selecione um produto antes de adicionar ao carrinho.");
+                return;
+            }
+
+            int produtoId;
+            try
+            {
+                produtoId = Convert.ToInt32(cbProdutos.SelectedValue);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Produto inválido selecionado.");
+                return;
+            }
+
+            int quantidade = (int)numQtd.Value;
+
+            ItemCarrinho item = new ItemCarrinho()
+            {
+                CarrinhoId = carrinhoId,
+                ProdutoId = produtoId,
+                Quantidade = quantidade
+            };
+
+            ItemCarrinhoRepository repo = new ItemCarrinhoRepository();
+            repo.Adicionar(item);
+
+            MessageBox.Show("Adicionado ao carrinho!");
+        }
+
+        private void CarregarCarrinho()
+        {
+            int clienteId = 1;
+
+            CarrinhoRepository carrinhoRepo = new CarrinhoRepository();
+            int carrinhoId = carrinhoRepo.ObterCarrinhoPorCliente(clienteId);
+
+            ItemCarrinhoRepository repo = new ItemCarrinhoRepository();
+            dgvCarrinho.DataSource = repo.Listar(carrinhoId);
+        }
+
+        private void btnFinalizarCompra_Click(object sender, EventArgs e)
+        {
+            int clienteId = 1;
+
+            CarrinhoRepository carrinhoRepo = new CarrinhoRepository();
+            int carrinhoId = carrinhoRepo.ObterCarrinhoPorCliente(clienteId);
+
+            EncomendaRepository encomendaRepo = new EncomendaRepository();
+            encomendaRepo.CriarEncomenda(clienteId, carrinhoId);
+
+            MessageBox.Show("Compra finalizada!");
+
+            CarregarCarrinho();
+        }
+    }
+}
+
